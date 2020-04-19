@@ -1,0 +1,110 @@
+{
+  "name": "jest-integration-api-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "allTests": "jest",
+    "testPattern": "jest --testNamePattern ",
+    "jestDetectOpenHandles": "jest --detectOpenHandles",
+    "inBand": "jest --runInBand",
+    "test": "jest "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codestorage.com/ATP/jest-integration-api-tests.git"
+  },
+  "author": "Dmitrii Panchuk",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@hapi/joi": "^17.0.0",
+    "@hp/logger": "0.0.5",
+    "axios": "^0.19.0",
+    "babel": "^6.23.0",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "bluebird": "^3.7.1",
+    "deasync-promise": "^1.0.1",
+    "jest": "^24.9.0",
+    "jest-allure": "^0.1.1",
+    "jest-allure-reporter": "^1.2.1",
+    "jest-expect-message": "^1.0.2",
+    "moment": "^2.24.0",
+    "needle": "^2.3.3",
+    "npm": "^6.12.0",
+    "pg": "^7.17.1",
+    "pg-hstore": "^2.3.3",
+    "request-as-curl": "^0.1.0",
+    "rimraf": "^3.0.0",
+    "sequelize": "^5.21.3",
+    "uuid": "^3.3.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "overrides": [
+      {
+        "files": "*.spec.js",
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ],
+    "rules": {
+      "no-underscore-dangle": 0,
+      "no-await-in-loop": 0,
+      "no-restricted-syntax": 0,
+      "no-use-before-define": [
+        "error",
+        {
+          "functions": false
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "jest-extended": "^0.11.5",
+    "prettier": "^1.17.1"
+  },
+  "config": {
+    "envHost": "192.178.10.101",
+    "envWindowsHost": "1192.178.10.100",
+    "apiPath": "/api/",
+    "User": "SuperUser",
+    "Domain": "kitchen",
+    "UserPassword": 12345,
+    "UserAccountType": 1,
+    "settingsPort": 9999,
+  },
+  "jest": {
+    "testTimeout": 60000,
+    "globalSetup": "./setup.js",
+    "setupFilesAfterEnv": [
+      "jest-allure/dist/setup",
+      "jest-extended",
+      "jest-expect-message",
+      "./helpers/helpers.js",
+      "./helpers/testDataLoader.js",
+      "./helpers/methodLoader.js",
+      "./config/config.js",
+      "./lib/postgresConnector.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@hapi)/)"
+    ],
+    "globalTeardown": "./teardown.js"
+  }
+}
