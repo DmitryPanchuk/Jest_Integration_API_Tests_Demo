@@ -1,9 +1,3 @@
-const dateNow = new Date();
-const dateNowISO = dateNow.toISOString();
-const message = `autoTestEventMessage`;
-const sourceId = `autoTestLocation`;
-const userAddedEventName = `Событие созданное пользователем`;
-
 const teaBagData = (teaBagId, teaBagFlavour) => {
   return {
     teaBagId,
