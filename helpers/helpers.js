@@ -14,7 +14,7 @@ const promise = require("bluebird");
 const rmrf = promise.promisifyAll(rimraf);
 
 const logger = createLogger({
-  serviceName: "inOne api autotests",
+  serviceName: "jest api autotests",
   useConsole: true,
   useElastic: false,
   useRedis: false
