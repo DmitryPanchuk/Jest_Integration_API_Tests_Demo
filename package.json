@@ -87,7 +87,7 @@
     "Domain": "kitchen",
     "UserPassword": 12345,
     "UserAccountType": 1,
-    "settingsPort": 9999,
+    "settingsPort": 9999
   },
   "jest": {
     "testTimeout": 60000,
