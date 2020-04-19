@@ -17,7 +17,7 @@ describe("Recipes", () => {
         reporter
           .epic("Recipes")
           .feature("Making tea")
-          .story("");
+          .story("Tea associated entities preparation");
 
         const response = await API.cook.tea.lookUpTeaCups();
 
@@ -41,7 +41,8 @@ describe("Recipes", () => {
           reporter
             .epic("Recipes")
             .feature("Making tea")
-            .story("");
+            .story("Tea associated entities preparation");
+
           if ((needToWash = true)) {
             const response = await API.cook.tea.washTeaCupById(teaCupId);
 
@@ -52,11 +53,11 @@ describe("Recipes", () => {
         }
       );
 
-      It("Drop water from teaPot", async () => {
+      It("Drop water from teaPot via POST /tea/teaPot/drop", async () => {
         reporter
           .epic("Recipes")
           .feature("Making tea")
-          .story("");
+          .story("Tea associated entities preparation");
 
         const response = await API.cook.tea.dropWaterFromTeaPot();
 
@@ -64,11 +65,11 @@ describe("Recipes", () => {
         I(() => expect(response.data.cupsLeft).toEqual(0));
       });
 
-      It("Fill teaPot with water", async () => {
+      It("Fill teaPot with watervia POST /tea/teaPot/fill", async () => {
         reporter
           .epic("Recipes")
           .feature("Making tea")
-          .story("");
+          .story("Tea associated entities preparation");
 
         const response = await API.cook.tea.fillTeaPot();
 
@@ -83,7 +84,7 @@ describe("Recipes", () => {
           reporter
             .epic("Recipes")
             .feature("Making tea")
-            .story("");
+            .story("Tea associated entities preparation");
 
           const response = await API.houseWare.tea.boilWaterWithTeaPot();
 
@@ -94,11 +95,11 @@ describe("Recipes", () => {
         300000
       );
 
-      It("Look up teaPot", async () => {
+      It("Look up teaPot via GET /tea/teaPot", async () => {
         reporter
           .epic("Recipes")
           .feature("Making tea")
-          .story("");
+          .story("Tea associated entities preparation");
 
         const response = await API.cook.tea.lookUpTeaPot();
 
@@ -111,9 +112,9 @@ describe("Recipes", () => {
     describe("Regular tea recipe", () => {
       It("Look up teaBags via GET /tea/lookUp/teaBags", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await API.cook.tea.lookUpTeaBags();
         I(() => expect(response.status).toEqual(200));
@@ -128,9 +129,9 @@ describe("Recipes", () => {
 
       It("Upload teaBag via POST /tea/teaItem", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await API.cook.tea.uploadTeaBag(
           teaBagData(teaBagId, teaBagFlavour)
@@ -144,9 +145,9 @@ describe("Recipes", () => {
 
       It("Look up tea item via GET /tea/teaItem/{teaItemId}", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await API.cook.tea.lookUpTeaItem(teaItemId);
 
@@ -164,9 +165,9 @@ describe("Recipes", () => {
 
       It("Fill up teaCup with hot water via PUT /tea/{teaItemId}", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await API.cook.tea.modifyTea(
           teaItemId,
@@ -180,9 +181,9 @@ describe("Recipes", () => {
         "Remove tea bag from cup via PUT /tea/teaItem/{teaItemId}",
         async () => {
           reporter
-            .epic("Event service")
-            .feature("User event CRUD")
-            .story("Create Event");
+            .epic("Recipes")
+            .feature("Making tea")
+            .story("Regular tea recipe");
 
           const response = await API.cook.tea.modifyTea(
             teaItemId,
@@ -194,9 +195,9 @@ describe("Recipes", () => {
 
       It("Add sugar via PUT /tea/{teaItemId}", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await API.cook.tea.modifyTea(teaItemId, addSugarData);
         I(() => expect(response.status).toEqual(200));
@@ -204,9 +205,9 @@ describe("Recipes", () => {
 
       It("Stir tea in a cup via POST /tea/stir/{teaItemId}", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await IAPI.cook.tea.modifyTea(teaItemId, stirData);
         I(() => expect(response.status).toEqual(200));
@@ -214,9 +215,9 @@ describe("Recipes", () => {
 
       It("Look up tea item via GET /tea/teaItem/{teaItemId}", async () => {
         reporter
-          .epic("Event service")
-          .feature("User event CRUD")
-          .story("Create Event");
+          .epic("Recipes")
+          .feature("Making tea")
+          .story("Regular tea recipe");
 
         const response = await API.cook.tea.lookUpTeaItem(teaItemId);
 
@@ -238,9 +239,9 @@ describe("Recipes", () => {
         "Drink tea via POST /tea/teaItem/{teaItemId}",
         async () => {
           reporter
-            .epic("Event service")
-            .feature("User event CRUD")
-            .story("Create Event");
+            .epic("Recipes")
+            .feature("Making tea")
+            .story("Drink tea");
 
           const response = await API.cook.tea.drinkTea();
           I(() => expect(response.status).toEqual(200));
@@ -255,7 +256,7 @@ describe("Recipes", () => {
         reporter
           .epic("Recipes")
           .feature("Making tea")
-          .story("");
+          .story("Clean up procedure");
 
         const response = await API.cook.tea.deleteTeaItem(teaItemId);
 
@@ -276,7 +277,7 @@ describe("Recipes", () => {
         reporter
           .epic("Recipes")
           .feature("Making tea")
-          .story("");
+          .story("Clean up procedure");
 
         const response = await API.houseWare.tea.washTeaCupById(teaCupId);
 
