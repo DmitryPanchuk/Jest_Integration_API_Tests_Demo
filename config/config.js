@@ -9,14 +9,11 @@ const apiPath = process.env.npm_package_config_apiPath;
 
 const settingsBook = JSON.parse(process.env.npm_package_config_settingsBook);
 
-// *** authorization ***
-const authServiceEndPoint = `${http}${host}${apiPath}authentication`;
-
 const superUserCreds = {
-  login: process.env.npm_package_config_inOneUser,
-  domain: process.env.npm_package_config_inOneDomain,
-  password: process.env.npm_package_config_inOneUserPassword,
-  accountType: process.env.npm_package_config_inOneUserAccountType
+  login: process.env.npm_package_config_User,
+  domain: process.env.npm_package_config_Domain,
+  password: process.env.npm_package_config_UserPassword,
+  accountType: process.env.npm_package_config_UserAccountType
 };
 
 const authTokenId = process.env.npm_package_config_authTokenId;
