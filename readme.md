@@ -1,6 +1,5 @@
 # Jest API Integration Tests
-This is a demo of project structure used by me
-There is no actual API covered by the spec of the demo
+This is a demo of project structure used by me, there is no actual API covered by the spec of the demo
 
 ## Framework
 jest - as test core,
