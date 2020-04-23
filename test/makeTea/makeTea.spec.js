@@ -84,7 +84,7 @@ describe("Recipes", () => {
             .feature("Making tea")
             .story("Tea associated entities preparation");
 
-          const response = await API.houseWare.tea.boilWaterWithTeaPot();
+          const response = await API.cook.tea.boilWaterWithTeaPot();
 
           I(() => expect(response.status).toEqual(200));
           I(() => expect(response.data.cupsLeft).toEqual(5));
