@@ -43,7 +43,7 @@ describe("Recipes", () => {
             .feature("Making tea")
             .story("Tea associated entities preparation");
 
-          if ((needToWash = true)) {
+          if (needToWash === true) {
             const response = await API.cook.tea.washTeaCupById(teaCupId);
 
             I(() => expect(response.status).toEqual(200));
