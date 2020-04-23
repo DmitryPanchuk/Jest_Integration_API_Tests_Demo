@@ -23,9 +23,7 @@ describe("Recipes", () => {
 
         I(() => expect(response.status).toEqual(200));
 
-        if (
-          response.data.cups.find(cup => cup.isClean === true) !== undefined
-        ) {
+        if (response.data.cups.find(cup => cup.isClean === true)) {
           teaCupId = cup.id;
         } else {
           teaCupId = Object.keys(response.data.cups)[
