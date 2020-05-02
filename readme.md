@@ -45,7 +45,7 @@ To run tests with specific user credentials use:
 * envWindowsHost - windows host ip address (automatically assigned during global setup)
 * User - user
 * Domain - domain
-* UserPassword - domain
+* UserPassword - password
 * AccountType - user auth method
 * settingsPort - port for settings book service
 * settingsBook - data from /settings method needed for framework configuration
